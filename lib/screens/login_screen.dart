@@ -46,9 +46,7 @@ class _LoginScreenState extends State<LoginScreen> {
         _showError(res['message']?.toString() ?? 'Login failed');
       }
     } catch (e) {
-      debugPrint('LOGIN ERROR: $e');
-      debugPrint('BASE URL: ${ApiService.baseUrl}');
-      _showError('Error: $e');
+      _showError('Could not connect to server.');
     } finally {
       if (mounted) setState(() => _loading = false);
     }

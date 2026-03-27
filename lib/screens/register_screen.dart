@@ -91,9 +91,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
         _showError(res['message']?.toString() ?? 'Registration failed');
       }
     } catch (e) {
-      debugPrint('REGISTER ERROR: $e');
-      debugPrint('BASE URL: ${ApiService.baseUrl}');
-      _showError('Error: $e');
+      _showError('Could not connect to server.');
     } finally {
       if (mounted) setState(() => _loading = false);
     }
